@@ -11,9 +11,19 @@ inflation_radius: 0.2
 #代价比例系数，越大则代价值越小
 cost_scaling_factor: 3.0
 
+
 #地图类型
 map_type: costmap
 #导航包所需要的传感器
 observation_sources: scan
 #对传感器的坐标系和数据进行配置。这个也会用于代价地图添加和清除障碍物。例如，你可以用激光雷达传感器用于在代价地图添加障碍物，再添加kinect用于导航和清除障碍物。
 scan: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+
+# cost_translation_table:
+#   -1: 100   # 将-1映射为致命障碍物的成本值
+# cost_translation_table:
+#   -1: 100   # 将-1映射为致命障碍物的成本值
+#   0: 0
+#   253: 99
+#   254: 100
+#   255: -1
